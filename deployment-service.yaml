@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hellodocker-deployment
+  name: jenkins-kubernetes-deployment  # You can choose any name
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hellodocker-deployment
+      app: jenkins-kubernetes-app  # Consistent label for the app
   template:
     metadata:
       labels:
-        app: hellodocker-deployment
+        app: jenkins-kubernetes-app  # Consistent label for the app
     spec:
       containers:
-      - name: hellodocker-deployment
+      - name: hellodocker-container  # Name of the container (can be anything)
         image: jamesndubuisi/hellodocker
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 82  # Your preferred port
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hellodocker-service
+  name: jenkins-kubernetes-service  # Name of the service
 spec:
   selector:
-    app: hellodocker-deployment
+    app: jenkins-kubernetes-app  # Match with the app label
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 82  # Expose the same port as the container
+    targetPort: 82
   type: NodePort
