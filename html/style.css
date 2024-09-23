@@ -1,12 +1,12 @@
 body {
-            background-color: rgb(237, 251, 255); /* Light beige */
+            background-color: rgb(237, 251, 255); 
             color: rgb(26, 26, 63);
-            font-family:serif;
+            font-family:serif; /* serif font style */
             text-align: center; /* Center-aligns all text */
         }
 
         header {
-            background-color: rgb(33, 33, 66); /* Dark beige */
+            background-color: rgb(33, 33, 66); 
             padding: 40px; /* High padding */
             border-radius: 20px; /* Border radius for rounded corners */
             margin: 20px auto; /* Center-align header */
