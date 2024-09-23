@@ -1,14 +1,30 @@
 body {
-    background-color: black;
-    color: white;
-    font-family: 'Helvetica', sans-serif;
-}
+            background-color: rgb(237, 251, 255); /* Light beige */
+            color: rgb(26, 26, 63);
+            font-family:serif;
+            text-align: center; /* Center-aligns all text */
+        }
 
-header {
-    text-align: center;
-    padding: 20px;
-}
+        header {
+            background-color: rgb(33, 33, 66); /* Dark beige */
+            padding: 40px; /* High padding */
+            border-radius: 20px; /* Border radius for rounded corners */
+            margin: 20px auto; /* Center-align header */
+            max-width: 80%; /* Keeps header width controlled */
+            color: white; /*white font color to header*/
+        }
 
-h1 {
-    font-weight: bold;
-}
+        h1 {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        main {
+        text-align: center;
+        margin-top: 25vh;
+        margin-bottom: 25vh;
+        }
+
+        footer {
+            margin-top: 25vh;
+        }
