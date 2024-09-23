@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: bold;
+}
