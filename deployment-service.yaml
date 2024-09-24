@@ -17,7 +17,8 @@ spec:
         image: jamesndubuisi/hellodocker
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080  # Update to port 8080 to match localhost access
+        - containerPort: 8080  # Internal container port
+          hostPort: 8080  # Map the container's port to the host's port 8080
 
 ---
 apiVersion: v1
@@ -29,7 +30,6 @@ spec:
     app: jenkins-kubernetes-pipeline-app  # Match with the app label
   ports:
   - protocol: TCP
-    port: 8080  # Expose port 8080
-    targetPort: 8080  # Container listens on port 8080
-    nodePort: 30080  # Map NodePort explicitly to 30080
-  type: NodePort  # NodePort type allows external access
+    port: 8080  # Expose the service on port 8080
+    targetPort: 8080  # The container listens on port 8080
+  type: ClusterIP  # Service only accessible within the cluster (no external NodePort)
