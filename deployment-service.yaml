@@ -1,34 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-kubernetes-deployment  # You can choose any name
+  name: jenkins-kubernetes-cicd-pipeline  # You can choose any name
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins-kubernetes-app  # Consistent label for the app
+      app: jenkins-kubernetes-pipeline-app  # Consistent label for the app
   template:
     metadata:
       labels:
-        app: jenkins-kubernetes-app  # Consistent label for the app
+        app: jenkins-kubernetes-pipeline-app  # Consistent label for the app
     spec:
       containers:
-      - name: hellodocker-container  # Name of the container (can be anything)
+      - name: jenkins-kubernetes-pipeline-container  # Name of the container (can be anything)
         image: jamesndubuisi/hellodocker
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 82  # Your preferred port
+        - containerPort: 8080  # Update to port 8080 to match localhost access
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: jenkins-kubernetes-service  # Name of the service
+  name: jenkins-kubernetes-pipeline-service  # Name of the service
 spec:
   selector:
-    app: jenkins-kubernetes-app  # Match with the app label
+    app: jenkins-kubernetes-pipeline-app  # Match with the app label
   ports:
   - protocol: TCP
-    port: 82  # Expose the same port as the container
-    targetPort: 82
-  type: NodePort
+    port: 8080  # Expose port 8080
+    targetPort: 8080  # Container listens on port 8080
+    nodePort: 30080  # Map NodePort explicitly to 30080
+  type: NodePort  # NodePort type allows external access
