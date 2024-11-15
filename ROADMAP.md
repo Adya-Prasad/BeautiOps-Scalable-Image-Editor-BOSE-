@@ -9,4 +9,25 @@
 
 This concise roadmap is ready for you to add to your **README.md** and start working on your project!
 
-Let me know if you'd like any more modifications!
+---
+
+1. Frontend (HTML)
+  * A file upload form and filter options.
+  * A preview and download button for the processed image.
+
+2. Backend (Python Flask API):
+
+    * Handle image processing using libraries like Pillow (PIL) or OpenCV.
+    * Provide endpoints for uploading, processing, and downloading images.
+
+3. Containerization (Docker):
+
+  * Dockerize both the frontend and backend.
+
+4. Orchestration (Kubernetes):
+
+    * Deploy the frontend and backend as separate services.
+
+5. CI/CD (Jenkins):
+
+    * Automate Docker builds and Kubernetes deployments.
