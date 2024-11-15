@@ -1,3 +1,3 @@
-# PROJECT- BeautifyOps: Scalable Image Editor (BOSE
+# PROJECT- BeautiOps: Scalable Image Editor (BOSE
 # Jenkins-Kubernetes-Automated-Pipeline
 
